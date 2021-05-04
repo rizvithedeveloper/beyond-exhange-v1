@@ -1,0 +1,60 @@
+/*--### MARKET BANNER ###--*/
+.market-banner{
+    min-height: auto;
+    padding: 70px 0;
+
+    /* CARD BOX */
+    .card-box{
+        background: #242835;
+
+        /* BOX HEAD */
+        .box-head{
+            margin-bottom: 0;
+
+            p{
+                margin-bottom: 0;
+            }
+        }
+
+        /* BOX BODY */
+        .box-body{
+            padding: 20px;
+
+            /* Currency Box */
+            .currency-box{
+                
+                .column{
+                    margin-bottom: 30px;
+
+                    img{
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    &:last-child{
+                        margin-bottom: 0px;
+                    }
+
+                    h5{
+                        color: #939299;
+                        font-weight: 400;
+                    }
+                    span{
+                        color: $green-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--### MARKET SECTION ###--*/
+.market-section{
+    background-color: $black;
+    padding-bottom: 50px;
+
+    .card-box.search-market .fixed-table-body{
+        max-height: 443px;
+        max-height: calc(500px - 57px);
+    }
+}

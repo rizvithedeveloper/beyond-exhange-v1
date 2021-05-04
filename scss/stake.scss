@@ -1,0 +1,678 @@
+/*--### STAKE BANNER ###--*/
+.stake-banner{
+    display: none;
+
+    /* BEFORE */
+    &::before{
+        background-image: url('../images/illustration/stake-banner-img1.svg');
+    }
+        
+}
+
+/*--### STAKE CONTENT SECTION ###--*/
+.stake-content-section{
+    background-color: $black;
+    padding-bottom: 50px;
+
+    /* NAV PILLS */
+    .nav-pills{
+
+        li{
+            margin-right: 30px;
+
+            .nav-link{
+                padding: .5rem 3rem;
+                color: $green-light;
+                border-radius: 100px;
+
+                &::before{
+                    display: none;
+                }
+
+                &.active{
+                    background-color: $green-light !important;
+                    color: $white;
+                }
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+
+    /* STAKE TABS */
+    .row.stake-tabs{
+        flex-direction: column;
+    }
+    /* NAV PILLS */
+    .nav-pills{
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 15px !important;
+    }
+
+    /* TAB CONTENT */
+    .tab-content{
+        padding: 2.5rem;
+        margin-bottom: 15px;
+
+        /* HEADING */
+        .heading{
+            margin-bottom: 30px;
+            color: $green-light;
+        }
+
+        /* TEXT */
+        .text{
+            width: 400px;
+            color: #a1a0a7;
+            font-weight: 300;
+        }
+        
+        /* ICON */
+        .icon{
+            text-align: center;
+            margin-top: 70px;
+
+            img{
+                width: 110px;
+            }
+        }
+
+        /* SWAP FORM */
+        .swap-form{
+
+            /* SWAP INPUT BOX */
+            .swap-input-box{
+                padding: 0.5rem;
+                border: 1px solid $green-light;
+                position: relative;
+
+                /* SWAP INPUT TOP */
+                .swap-input-top{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+
+                    p{
+                        margin-bottom: 0;
+                    }
+                }
+
+                /* INPUT */
+                input{
+                    color: #a1a0a7;
+                    font-weight: 100;
+                }
+
+                /* FIRST CHILD INPUT */
+                &:first-child{
+                    .swap-input{
+
+                        input{
+                            padding-right: 120px;
+                        }
+                    }
+                }
+
+                /* SWAP INPUT */
+                .swap-input{
+
+                    input{
+                        background: none;
+                        border: none;
+                        width: 100%;
+                        padding: 12px 0;
+                    }
+                }
+                /* SWAP INPUT BOTTOM */
+                .swap-input-bottom{
+                    display: flex;
+                    justify-content: flex-end;
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+
+                    .max-button{
+                        border: none;
+                        background: $green-light;
+                        color: $white;
+                        font-size: 13px;
+                        height: 23px;
+                    }
+
+                    .icon-text{
+                        margin-left: 15px;
+                        
+                        img{
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+
+            /* DOWN ICON */
+            .down-icon{
+                padding: 30px 0px;
+                text-align: center;
+                width: 20px;
+                margin: 0 auto;
+            }
+
+            /* BUTTON */
+            .button{
+                width: 100%;
+                margin-top: 20px;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        /* NETWORK FEE SUBMIT BOX */
+        .network-fee-submit-box{
+
+            .network-fee-box{
+
+                p{
+                    font-size: 14px;
+                    text-align: center;
+
+                    a{
+                        color: $green-light;
+                    }
+                }
+            }
+            /* BUTTON */
+            .button{
+                width: 100%;
+            }
+        }
+
+        /*--### REWARDS LIST BOX ###--*/
+        .rewards-list-box{
+
+            /* TABLE */
+            table{
+                
+                thead{
+                    background-color: $green-light;
+                    color: $white;
+                }
+                tbody{
+                    background-color: #e2e8f0;
+                }
+            }
+
+            /* BUTTON GROUP */
+            .button-group{
+                display: flex;
+                margin-top: 20px;
+
+                .button{
+                    width: 49%;
+
+                    &:first-child{
+                        margin-right: 1%;
+                    }
+                    &:last-child{
+                        margin-left: 1%;
+                    }
+                }
+            }
+        }
+
+        /* MAX BUTTON INPUT */
+        .max-button-input-box{
+            margin-top: 30px;
+            margin-bottom: 50px;
+
+            label{
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .input-box{
+                position: relative;
+                color: #4a5568;
+                background-color: #e2e8f0;
+                display: flex;
+
+                /* CURRENCY TYPE */
+                .currency-type{
+                    margin-bottom: 0;
+                    font-size: 13px;
+                    padding-right: 15px;
+                    padding-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+
+                    &::before{
+                        content: '';
+                        height: 50%;
+                        width: 1px;
+                        border-right: 1px solid #a0aec0;
+                        position: absolute;
+                        right: 0;
+                        top: 25%;
+                    }
+                }
+
+                /* INPUT */
+                input{
+                    width: 100%;
+                    padding: 1rem;
+                    border: none;
+                    background: none;
+                }
+
+                /* MAX BUTTON */
+                .max-button{
+                    height: 38px;
+                    padding: 8px 15px;
+                    margin-top: 9px;
+                    margin-right: 20px;
+                }
+            }
+
+            .input-box-bottom{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5px;
+
+                p{
+                    font-weight: 500;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        /*--### TRANSFER FORM ###--*/
+        .transfer-form{
+
+            .transferable-amount-box{
+                padding: 0.75rem 1rem;
+                border: 1px solid $green-light;
+                display: flex;
+                justify-content: space-between;
+
+                p{
+                    font-weight: 500;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+                .transferable-amount{
+                    color: $green-light;
+                }
+            }
+            .max-button-input-box{
+                margin-bottom: 20px;
+            }
+            .destination-address-box{
+                margin-bottom: 30px;
+
+                label{
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                .form-control{
+                    border: none !important;
+                    color: #4a5568;
+                    background-color: #e2e8f0;
+                    padding: 0.6rem 1rem;
+                    height: fit-content;
+                    font-size: 14px;
+                    border-radius: 0;
+                }
+            }
+            .currency-type{
+                width: fit-content;
+
+                .dropdown-toggle{
+                    width: fit-content;
+
+                    &:focus{
+                        outline: none !important;
+                    }
+                }
+                .dropdown-menu{
+                    width: 90px;
+                    overflow-x: hidden;
+
+                    .text{
+                        width: 100%;
+                    }
+                    .dropdown-item.active, .dropdown-item:active{
+                        background-color: $green-light;
+                        
+                        span{
+                            color: $white;
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        /*--## BYN AMOUNT GRAPH ##--*/
+        .byn-amount-graph{
+            margin-bottom: 20px;
+
+            /* ROW */
+            .row{
+                display: flex;
+                justify-content: space-between;
+                
+                h6{
+                    font-weight: 300;
+                    color: $green-light;
+                    margin-bottom: 0;
+                }
+                p{
+                    font-weight: 300;
+                    margin-bottom: 0;
+                    font-size: 14px;
+                    padding: 10px 0px;
+
+                    span{
+                        color: $green-light;
+                    }
+                }
+
+                .column{
+
+                    &:first-child{
+                        text-align: left;
+                    }
+                    &:last-child{
+                        text-align: right;
+                    }
+                }
+            }
+
+            /* PROGRESS */
+            .progress{
+                height: 25px;
+                border-radius: 0px;
+
+                .progress-bar{
+                    background-color: $green-light;
+                }
+            }
+        }
+
+        /*--### BURN FORM ###--*/
+        .burn-form{
+
+            /* LABEL */
+            label{
+                font-weight: 500;
+                font-size: 14px;
+            }
+
+            /* BURN TABS */
+            .burn-tabs{
+
+                /* NAV PILLS */
+                .nav-pills{
+                    justify-content: start;
+                    margin-bottom: 20px !important;
+
+                    .nav-item{
+                        margin-right: 15px;
+
+                        a{
+                            background-color: #e2e8f0 !important;
+                            color: #718096;
+                            font-weight: 400;
+
+                            &.active{
+                                background-color: $green-light !important;
+                                color: $white;
+                            }
+                            &::before{
+                                display: none !important;
+                            }
+                        }
+
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+                    }
+                }
+
+                /* TAB CONTENT */
+                .tab-content{
+                    padding: 0;
+
+                    .max-button-input-box{
+                        margin-top: 20px;
+                        margin-bottom: 30px;
+
+                        .input-box-top{
+                            display: flex;
+                            justify-content: space-between;
+
+                            p{
+                                margin-bottom: 5px;
+                                font-size: 15px;
+                                font-weight: 500;
+                                color: $grey;
+                            }
+                        }
+                    }
+                    .transferable-byn{
+
+                        .view-transferable{
+                            text-align: center;
+                            color: $green-light;
+                            cursor: pointer;
+                        }
+                        .transferable-byn-input{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* STAKE DETAILS */
+    .stake-details{
+
+        /* TABLE */
+        table{
+            td{
+                img{
+                    width: 30px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .fixed-table-header{
+            display: none;
+        }
+
+        /* PRICES BOX */
+        .prices-box{
+            display: flex;
+            justify-content: space-between;
+            padding: .75rem 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+
+            .icon-text{
+                display: flex;
+                
+                img{
+                    width: 30px;
+                    margin-right: 10px;
+                }
+                p{
+                    margin-bottom: 0;
+                    margin-top: 4px;
+                }
+            }
+        }
+
+        /* QUANTITY BOX */
+        .quantity-box{
+            padding: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+
+            p{
+                margin-bottom: 0;
+            }
+            .box-head{
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 10px;
+            }
+            .box-body{
+
+                .staked-quantity{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 15px 0px;
+                }
+                .staked-progress{
+                    background-color: #e2e8f0;
+                    border-radius: 0;
+
+                    .progress-bar{
+                        background-color: $green-light;
+                    }
+                }
+            }
+        }
+
+        /* DAILY REWARDS */
+        .daily-reward{
+            padding: 1.5rem;
+
+            p{
+                margin-bottom: 0;
+                font-weight: 400;
+                font-size: 14px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .row{
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+
+                a{
+                    display: flex;
+                    color: $green-light;
+                    font-size: 13px;
+
+                    img{
+                        object-fit: contain;
+                        margin-left: 6px;
+                        width: 12px;
+                    }
+                }
+                /* STAKED REWARDS */
+                .staked-reward{
+                    display: flex;
+                    color: $green-light;
+
+                    p{
+                        font-size: 22px;
+                        font-weight: 400;
+                        display: block;
+                        color: $green-light;
+                    }
+                    img{
+                        object-fit: contain;
+                        margin-right: 5px;
+                        width: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--### FAQS SECTION ###--*/
+.faqs-section{
+    background-color: #0c0c0c;
+    color: #a1a0a7;
+    text-align: center;
+    padding: 60px 0px;
+
+    /* Heading */
+    .heading{
+        color: $green-light;
+
+        h1{
+            font-weight: 300;
+        }
+    }
+
+    .text{
+        width: 100%;
+        font-weight: 100;
+    }
+
+    /* FAQ ROW */
+    .faq-row{
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .card{
+            border: none;
+            margin-bottom: 20px;
+            background-color: #141722;
+            color: #a1a0a7;
+            text-align: left;
+
+            /* CARD HEADER */
+            .card-header{
+                border-bottom: 0;
+                background-color: rgb(0 0 0 / 23%);
+
+                button{
+                    padding: 0;
+                    border: none;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    color: #a1a0a7;
+
+                    p{
+                        margin-bottom: 0;
+                    }
+                    img{
+                        width: 25px;
+                        transform: rotate(45deg);
+                        transition: 0.3s all
+                    }
+
+                    &.collapsed{
+
+                        img{
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+
+            /* Card Body */
+            .card-body{
+                font-weight: 300;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#1c4e9e">
+        <!-- <link rel="icon" href="images/icons/favicon.svg" type="image/svg" sizes="16x16"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Stake - Beyond Exchange</title>
+
+        <!--##Bootstrap##-->
+        <script src="js/jQuery.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <!--## BOOTSTRAP TABLE ##-->
+        <script src="js/bootstrap-table.min.js"></script>
+
+        <!--## BOOTSTRAP SELECT ##-->
+        <script src="js/bootstrap-select.min.js"></script>
+
+        <!--## CHART JS ##-->
+        <script src="js/chartJs.js"></script>
+
+        <!--## FONTAWESOME ##-->
+        <script src="js/fontawesome-kit.js"></script>
+        
+        <!--## Google Font ##-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+        <!--##Custom StyleSheet##-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--### WALLET MODAL ###-->
+        <div class="modal fade wallet-modal" id="walletModal" tabindex="-1" role="dialog" aria-labelledby="walletModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="walletModalLabel">Connect Your Wallet</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Metamask.svg" alt="Icon">
+                    <p>Metamask</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/WalletConnect.svg" alt="Icon">
+                    <p>WalletConnect</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Portis.svg" alt="Icon">
+                    <p>Portis</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Coinbase-Wallet.svg" alt="Icon">
+                    <p>Coinbase Wallet</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Formatic.svg" alt="Icon">
+                    <p>Formatic</p>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--### WALLET MODAL ###-->
+
+        <!--### HEADER ###-->
+        <header>
+            <div class="container-fluid">
+                <!--# NAVBAR #-->
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.3 105.8">
+                            <title>Beyond Logo</title>
+                            <path
+                            d="M39.6 40.7c3.4 0 6.2 1.1 8.6 3.2 2.4 2.1 3.6 4.7 3.5 7.8 0 1.6-.4 3-1.1 4.5-.7 1.4-1.7 2.6-2.9 3.6 2 1 3.5 2.3 4.7 4.1 1.2 1.8 1.8 3.7 1.8 5.8 0 3.1-1.2 5.8-3.6 8-2.4 2.2-5.3 3.3-8.7 3.3H0V40.7h39.6zM11 57.1h25.2c1.2 0 2.2-.4 3-1.1.8-.8 1.2-1.7 1.2-2.8 0-1.1-.4-2-1.2-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zm0 15.3h27.9c1.2 0 2.2-.4 3-1.1.9-.8 1.3-1.7 1.2-2.8 0-1.1-.4-2-1.3-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zM109 40.7v8.9H70.5v6.6h33.4V65H70.5v6.9H109v8.9H59.5V40.7H109zM218.9 40.7c3.6 0 6.6 1.1 9.1 3.4s3.8 5 3.7 8.3v16.7c0 3.2-1.2 6-3.7 8.3-2.5 2.3-5.5 3.4-9.1 3.4h-31.4c-3.6 0-6.6-1.1-9.1-3.4s-3.7-5-3.7-8.3V52.5c0-3.2 1.2-6 3.7-8.3 2.5-2.3 5.6-3.4 9.1-3.4h31.4zm-31.8 10.4c-1 .9-1.5 2-1.5 3.3v12.9c0 1.3.5 2.4 1.5 3.3 1 .9 2.2 1.3 3.7 1.3h24.9c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-24.9c-1.5-.1-2.7.3-3.7 1.3zM248 40.7l34.7 28.2V40.7h11v40.1h-11L248 52.7v28.1h-11V40.7h11zM341.5 40.7c2.4 0 4.6.5 6.7 1.6 2.2 1 3.9 2.5 5.1 4.3 1.3 1.8 2 3.8 1.9 5.9v16.7c.1 2.1-.6 4.1-2 5.9-1.3 1.8-3 3.2-5.1 4.3-2 1-4.3 1.6-6.7 1.6h-42.6V40.7h42.7zm-31.6 31.2h29.3c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-29.3v22.1z"
+                            />
+                            <path
+                            d="M83 86.4c-1.7 2.6-3.2 5.4-4.5 8.2-.6 1.4-1.2 2.9-1.6 4.3-.4 1.4-.6 3-.1 3.9.4.8 1.7 1 3.1.7 1.4-.3 2.9-.8 4.3-1.4 2.8-1.2 5.6-2.7 8.2-4.3 5.4-3.1 10.4-6.8 15.4-10.7 5-3.9 9.8-7.9 14.7-11.9 19.6-15.9 39.5-31.9 61.1-45.6 10.8-6.9 22-13.2 33.8-18.6C229.2 5.7 241.9 1.8 255 .4c6.6-.6 13.3-.6 19.9.2 6.6.9 13.1 2.5 19.2 5.1 12.3 5.1 22.6 13.8 30.1 24.1l-.7.6c-9.4-8.4-20.1-15-31.7-18.5-2.9-.9-5.8-1.5-8.8-2.1-3-.5-5.9-.9-8.9-1-6-.3-12 0-18 .9-11.9 1.8-23.7 5.4-35.2 9.9-11.5 4.5-22.7 10.1-33.5 16.4-21.6 12.6-41.9 27.7-62.1 42.9-5.1 3.8-10.2 7.6-15.4 11.2-2.6 1.8-5.2 3.6-7.9 5.4-2.7 1.7-5.5 3.3-8.3 4.8-2.8 1.5-5.7 2.9-8.8 4.1-1.5.6-3.1 1-4.8 1.3-.4 0-.9.1-1.3.1-.5-.1-.9 0-1.4-.2-1-.2-2.1-.9-2.5-1.9-.5-1-.4-2-.3-2.8.1-.9.3-1.7.6-2.5.5-1.6 1.2-3 2-4.5 1.5-2.8 3.2-5.5 5.1-8.1l.7.6z"
+                            />
+                            <path d="M145.4 57.3l-16.7-16.6h-16.1l25.3 23.5z" />
+                        </svg>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="stake.html">Stake</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="market.html">Market</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="trade.html">Trade</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="loan.html">Loan</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                          <a class="nav-link" href="wallet.html">Wallet</a>
+                        </li>
+                      </ul>
+                      <div class="ml-auto right">
+                        <button class="btn button" type="button" data-toggle="modal" data-target="#walletModal">
+                          <i class="fas fa-wallet"></i>
+                          <p>Connect Wallet</p>
+                        </button>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--### HEADER ENDED ###-->
+
+        <!--### STAKE BANNER ###-->
+        <section class="stake-banner sub-pages-banner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7 col-12">
+                        <!--## HEADING ##-->
+                        <div class="heading">
+                            <h1>EARN DAILY REWARDS BY <span>STAKING BYN</span></h1>
+                        </div>
+
+                        <!--## TEXT ##-->
+                        <div class="text">
+                            <p>
+                                While making return from your synthetic assets investment,
+                                also enjoy your BYN holdings compound on daily basis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--### STAKE CONTENT SECTION ###-->
+        <section class="stake-content-section">
+            <div class="container-fluid">
+                <!--# STAKE TABS #-->
+                <div class="row stake-tabs">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" id="pills-swapByn-tab" data-toggle="pill" href="#pills-swapByn" role="tab" aria-controls="pills-swapByn" aria-selected="true">Swap BYN</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-mint-tab" data-toggle="pill" href="#pills-mint" role="tab" aria-controls="pills-mint" aria-selected="false">Invest Synth</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-rewards-tab" data-toggle="pill" href="#pills-rewards" role="tab" aria-controls="pills-rewards" aria-selected="false">Rewards</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-transfer-tab" data-toggle="pill" href="#pills-transfer" role="tab" aria-controls="pills-transfer" aria-selected="false">Transfer</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-burn-tab" data-toggle="pill" href="#pills-burn" role="tab" aria-controls="pills-burn" aria-selected="false">Redeem</a>
+                            </li>
+                          </ul>
+    
+                          <!--## TAB CONTENT ##-->
+                          <div class="tab-content card-box" id="pills-tabContent">
+                            <!--# SWAP BEYOND #-->
+                            <div class="tab-pane fade show active" id="pills-swapByn" role="tabpanel" aria-labelledby="pills-swapByn-tab">
+                                <div class="row">
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!-- Heading -->
+                                        <div class="heading">
+                                            <h4>SWAP</h4>
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class="text">
+                                            <p>
+                                                Onboard Beyond exchange by swapping your ETH
+                                                into BYN.
+                                            </p>
+                                            <p>
+                                                Stake, trade, make profit and earn reward.
+                                                Everything starts from here.
+                                            </p>
+                                        </div>
+
+                                        <!-- Icon -->
+                                        <div class="icon">
+                                            <img src="images/icons/swap-green.svg" alt="Icon">
+                                        </div>
+                                    </div>
+
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!--## SWAP FORM ##-->
+                                        <form action="" class="swap-form">
+                                            <!--# Swap Input Box #-->
+                                            <div class="swap-input-box">
+                                                <!-- Top -->
+                                                <div class="swap-input-top">
+                                                    <p>From (ETH)</p>
+                                                    <div class="balance">
+                                                        <p>Balance: <br /> <span>0.00000</span>ETH</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Swap Input -->
+                                                <div class="swap-input">
+                                                    <input type="number" class="form Control" placeholder="Enter Amount">
+                                                </div>
+
+                                                <!-- Bottom -->
+                                                <div class="swap-input-bottom">
+                                                    <button type="button" class="max-button">MAX</button>
+                                                    <div class="icon-text">
+                                                        <img src="images/icons/eth-green.svg" alt="Icon">
+                                                        <span>ETH</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--# Down Icon #-->
+                                            <div class="down-icon">
+                                                <img src="images/icons/arrow_down_green.svg" alt="Icon">
+                                            </div>
+
+                                            <!--# Swap Input Box #-->
+                                            <div class="swap-input-box">
+                                                <!-- Top -->
+                                                <div class="swap-input-top">
+                                                    <p>To (BYN)</p>
+                                                    <div class="balance">
+                                                        <p>Balance: <br /> <span>-</span>BYN</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Swap Input -->
+                                                <div class="swap-input">
+                                                    <input type="number" class="form Control" placeholder="Enter Amount">
+                                                </div>
+                                            </div>
+
+                                            <input type="submit" class="button" value="SWAP">
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!--# MINT #-->
+                            <div class="tab-pane fade" id="pills-mint" role="tabpanel" aria-labelledby="pills-mint-tab">
+                                <div class="row">
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!-- Heading -->
+                                        <div class="heading">
+                                            <h4>INVEST</h4>
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class="text">
+                                            <p>
+                                                Invest into USDb, by staking your BYN.
+                                            </p>
+                                            <p>
+                                                You can trade various synthetic assets using USDb
+                                                as well as earn daily staking reward from your staked BYN.
+                                            </p>
+                                        </div>
+
+                                        <!-- Icon -->
+                                        <div class="icon">
+                                            <img src="images/icons/invest-icon-green.svg" alt="Icon">
+                                        </div>
+                                    </div>
+
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!--## MINT FORM ##-->
+                                        <form action="" class="mint-form">
+
+                                            <!--# Max Button Input Box #-->
+                                            <div class="max-button-input-box">
+                                                <label for="mintInput">Enter amount to invest USDb</label>
+                                                <!-- Input Box -->
+                                                <div class="input-box">
+                                                    <p class="currency-type">USDb</p>
+                                                    <input type="number" id="mintInput" placeholder="Enter Amount">
+                                                    <button class="button max-button" type="button">Max</button>
+                                                </div>  
+                                                <!-- Input Box Bottom -->  
+                                                <div class="input-box-bottom">
+                                                    <p>Staking: <span>0</span> BYN</p>
+                                                    <p>Collateral Ratio (BYN=>USDb): <span>300</span>%</p>
+                                                </div>
+                                            </div>
+
+                                            <!--# BYN AMOUNT GRAPH #-->
+                                            <div class="byn-amount-graph">
+                                                <!-- Upper Row -->
+                                                <div class="row upper-row">
+                                                    <div class="column">
+                                                        <h6>Title</h6>
+                                                        <p>BYN : <span>900</span></p>
+                                                    </div>
+                                                    <div class="column">
+                                                        <h6>Total Amount</h6>
+                                                        <p>2100</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Progress -->
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 33.33%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+
+                                                <!-- Bottom Row -->
+                                                <div class="row upper-row">
+                                                    <div class="column">
+                                                        <p>USDb : <span>300</span></p>
+                                                    </div>
+                                                    <div class="column">
+                                                        <p>700</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--# Mint Submit Box #-->
+                                            <div class="network-fee-submit-box">
+                                                <!-- Network Fee Box -->
+                                                <div class="network-fee-box changeable-gasfee">
+                                                    <p>Ethereum network fee: $0/<span class="gas-fee">1</span> GWEI <a href="#" data-toggle="modal" data-target="#feeModal1">EDIT</a></p>
+
+                                                    <!--## MODAL ##-->
+                                                    <div class="modal fade gas-fee-modal" id="feeModal1" tabindex="-1" role="dialog" aria-labelledby="feeModal1Label" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="feeModal1Label">Gas Fee</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <input type="number" placeholder="CUSTOM" class="form-control custom-gasfee-input" oninput="changeGasFee(this)">
+                                                                <button class="button" type="button" value="17" onclick="changetheGasFeeValue(this)">Average 17</button>
+                                                                <button class="button" type="button" value="23" onclick="changetheGasFeeValue(this)">Fast 23</button>
+                                                                <button class="button" type="button" value="34" onclick="changetheGasFeeValue(this)">Fastest 34</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Mint Now Submit Button -->
+                                                <input type="submit" class="button" value="Mint Now">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!--# REWARDS #-->
+                            <div class="tab-pane fade" id="pills-rewards" role="tabpanel" aria-labelledby="pills-rewards-tab">
+                                <div class="row">
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!-- Heading -->
+                                        <div class="heading">
+                                            <h4>REWARDS</h4>
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class="text">
+                                            <p>
+                                                If you have staked your BYN tokens and
+                                                invested USDb, you are eligible to collect BYN
+                                                staking rewards, Rewards will be distributed
+                                                on a daily basis.
+                                            </p>
+                                        </div>
+
+                                        <!-- Icon -->
+                                        <div class="icon">
+                                            <img src="images/icons/reward-icon-green.svg" alt="Icon">
+                                        </div>
+                                    </div>
+
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="rewards-list-box">
+                                            <table data-toggle="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Distribution Date</th>
+                                                        <th>BYN Quantity</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>09 Dec 2020</td>
+                                                        <td><span>10.12</span> BYN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>05 Dec 2020</td>
+                                                        <td><span>8.90</span> BYN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>04 Dec 2020</td>
+                                                        <td><span>11</span> BYN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>02 Dec 2020</td>
+                                                        <td><span>5.30</span> BYN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>01 Dec 2020</td>
+                                                        <td><span>4.70</span> BYN</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <!-- Button Group -->
+                                            <div class="button-group">
+                                                <button class="button w-100">Claim</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!--# TRANSFER #-->
+                            <div class="tab-pane fade" id="pills-transfer" role="tabpanel" aria-labelledby="pills-transfer-tab">
+                                <div class="row">
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!-- Heading -->
+                                        <div class="heading">
+                                            <h4>TRANSFER</h4>
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class="text">
+                                            <p>
+                                                Transfer your ETH, BYN or other synthetic asset.
+                                            </p>
+                                        </div>
+
+                                        <br />
+                                        <!-- Icon -->
+                                        <div class="icon">
+                                            <img src="images/icons/transfer-icon-green.svg" alt="Icon">
+                                        </div>
+                                    </div>
+
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!--### TRANSFER FORM ###-->
+                                        <form action="#" class="transfer-form">
+
+                                            <!--# Transferable Amount Box #-->
+                                            <div class="transferable-amount-box">
+                                                <p>Transferable amount:</p>
+                                                <p class="transferable-amount"><span>0.00</span> <span id="currencyType">ETH</span></p>
+                                            </div>
+
+                                            <!--# Max Button Input Box #-->
+                                            <div class="max-button-input-box">
+                                                <label for="transferInput">Enter amount:</label>
+                                                <!-- Input Box -->
+                                                <div class="input-box">
+                                                    <select class="selectpicker currency-type" onchange="transferCurrencyTypeChanged(this.value)">
+                                                        <option value="ETH">ETH</option>
+                                                        <option value="BYN">BYN</option>
+                                                        <option value="BTCb">BTCb</option>
+                                                        <option value="ETHb">ETHb</option>
+                                                        <option value="OILb">OILb</option>
+                                                        <option value="GBPb">GBPb</option>
+                                                        <option value="EURb">EURb</option>
+                                                        <option value="USDb">USDb</option>
+                                                    </select>
+                                                    <input type="number" id="transferInput" placeholder="Enter Amount">
+                                                    <button class="button max-button" type="button">Max</button>
+                                                </div>    
+                                            </div>
+
+                                            <!-- Destination Address Box -->
+                                            <div class="destination-address-box">
+                                                <label for="transferDestinationAddress">Enter destination address:</label>
+                                                <input type="text" class="form-control" id="transferDestinationAddress" placeholder="eg 0XB8B...8F6BA">
+                                            </div>
+
+                                            <!--# Transfer Submit Box #-->
+                                            <div class="network-fee-submit-box">
+                                                <!-- Network Fee Box -->
+                                                <div class="network-fee-box changeable-gasfee">
+                                                    <p>Ethereum network fee: $0/<span class="gas-fee">17</span> GWEI <a href="#" data-toggle="modal" data-target="#feeModal2">EDIT</a></p>
+
+                                                    <!--## MODAL ##-->
+                                                    <div class="modal fade gas-fee-modal" id="feeModal2" tabindex="-1" role="dialog" aria-labelledby="feeModal2Label" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="feeModal2Label">Gas Fee</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <input type="number" placeholder="CUSTOM" class="form-control custom-gasfee-input" oninput="changeGasFee(this)">
+                                                                <button class="button active" type="button" value="17" onclick="changetheGasFeeValue(this)">Average 17</button>
+                                                                <button class="button" type="button" value="23" onclick="changetheGasFeeValue(this)">Fast 23</button>
+                                                                <button class="button" type="button" value="34" onclick="changetheGasFeeValue(this)">Fastest 34</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Send Now Submit Button -->
+                                                <input type="submit" class="button" value="Send Now">
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!--# BURN #-->
+                            <div class="tab-pane fade" id="pills-burn" role="tabpanel" aria-labelledby="pills-burn-tab">
+                                <div class="row">
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!-- Heading -->
+                                        <div class="heading">
+                                            <h4>REDEEM</h4>
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class="text">
+                                            <p>
+                                                Redeem sUSD to unlock your staked BYN. This
+                                                increases your Collateralization Ratio and
+                                                reduces your debt, allowing you to freely transfer your non-staked BYN.
+                                            </p>
+                                        </div>
+
+                                        <!-- Icon -->
+                                        <div class="icon">
+                                            <img src="images/icons/redeem-icon-green.svg" alt="Icon">
+                                        </div>
+                                    </div>
+
+                                    <!-- COLUMN -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <!--## BURN FORM ##-->
+                                        <form action="" class="burn-form">
+                                            <label>Confirm or enter amount to burn:</label>
+
+                                            <!--### BURN TABS ###-->
+                                            <div class="burn-tabs">
+                                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                    <li class="nav-item">
+                                                      <a class="nav-link active" id="pills-burn-max-tab" data-toggle="pill" href="#pills-burn-max" role="tab" aria-controls="pills-burn-max" aria-selected="true">Burn Max</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                      <a class="nav-link" id="pills-fix-ratio-tab" data-toggle="pill" href="#pills-fix-ratio" role="tab" aria-controls="pills-fix-ratio" aria-selected="false">Fix your collateralization Ratio</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content" id="pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-burn-max" role="tabpanel" aria-labelledby="pills-burn-max-tab">
+                                                        <!--# Max Button Input Box #-->
+                                                        <div class="max-button-input-box">
+                                                            <!-- Input Box Top -->
+                                                            <div class="input-box-top">
+                                                                <p>$ <span>0</span></p>
+                                                                <p>$ <span>0</span></p>
+                                                            </div>
+    
+                                                            <!-- Input Box -->
+                                                            <div class="input-box">
+                                                                <p class="currency-type">USDb</p>
+                                                                <input type="number" id="" placeholder="Enter Amount">
+                                                            </div>  
+                                                        </div>
+    
+                                                        <!-- Transferable BYN -->
+                                                        <div class="transferable-byn">
+                                                            <p class="view-transferable" onclick="viewTransferableBynInput(this)">View transferable BYN</p>
+    
+                                                            <div class="transferable-byn-input">
+                                                                <!--# Max Button Input Box #-->
+                                                                <div class="max-button-input-box">
+                                                                    <!-- Input Box -->
+                                                                    <div class="input-box">
+                                                                        <p class="currency-type">BYN</p>
+                                                                        <input type="number" id="" placeholder="Enter Amount">
+                                                                    </div>  
+                                                                </div>
+    
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+                                                    <!-- Fix Ratio Tab Content -->
+                                                    <div class="tab-pane fade" id="pills-fix-ratio" role="tabpanel" aria-labelledby="pills-fix-ratio-tab">
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--## BURN SUBMIT BUTTON ##-->
+                                            <div class="network-fee-submit-box">
+                                                <!-- Network Fee Box -->
+                                                <div class="network-fee-box changeable-gasfee">
+                                                    <p>Ethereum network fee: $0/<span class="gas-fee">17</span> GWEI <a href="#" data-toggle="modal" data-target="#feeModal3">EDIT</a></p>
+
+                                                    <!--## MODAL ##-->
+                                                    <div class="modal fade gas-fee-modal" id="feeModal3" tabindex="-1" role="dialog" aria-labelledby="feeModal3Label" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="feeModal3Label">Gas Fee</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <input type="number" placeholder="CUSTOM" class="form-control custom-gasfee-input" oninput="changeGasFee(this)">
+                                                                <button class="button active" type="button" value="17" onclick="changetheGasFeeValue(this)">Average 17</button>
+                                                                <button class="button" type="button" value="23" onclick="changetheGasFeeValue(this)">Fast 23</button>
+                                                                <button class="button" type="button" value="34" onclick="changetheGasFeeValue(this)">Fastest 34</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Mint Now Submit Button -->
+                                                <input type="submit" class="button" value="Burn Now">
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--# STAKE DETAILS #-->
+                <div class="row stake-details">
+                    <div class="col-md-6 col-sm-12">
+                        <!-- PRICES BOX -->
+                        <div class="card-box prices-box">
+                            <div class="byn icon-text">
+                                <img src="images/icons/byn-green.svg" alt="Icon">
+                                <p>1 BYN = $<span>Infinity</span> USD</p>
+                            </div>
+
+                            <div class="eth icon-text">
+                                <img src="images/icons/eth-green.svg" alt="Icon">
+                                <p>1 ETH = $<span>560.09</span> USD</p>
+                            </div>
+                        </div>
+
+                        <!-- QUANTITY BOX -->
+                        <div class="card-box quantity-box">
+                            <div class="box-head">
+                                <p class="title">TOTAL BYN:</p>
+                                <p class="quantity"><span>0</span> BYN</p>
+                            </div>
+
+                            <div class="box-body">
+                                <div class="staked-quantity">
+                                    <p class="staked">Staked: <span>0</span></p>
+                                    <p class="not-staked">Not Staked: <span>0</span></p>
+                                </div>
+                                
+                                <div class="progress staked-progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAILY REWARD -->
+                        <div class="card-box daily-reward">
+                            <div class="row">
+                                <p>DAILY REWARD</p>
+                                <a href="#">
+                                    See Details 
+                                    <img src="images/icons/arrow-right-long.svg" alt="Arrow">
+                                </a>
+                            </div>
+
+                            <div class="row">
+                                <p>Reward from staked BYN</p>
+                                <div class="staked-reward">
+                                    <img src="images/icons/trophy-green.svg" alt="Trophy">
+                                    <p><span>4.55</span> BYN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stake Asset Summary -->
+                    <div class="col-md-6 col-sm-12">
+                        <!--# CARD BOX #-->
+                        <div class="card-box">
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <h5>Asset Summary</h5>
+                            </div>
+                            <!-- Card Table -->
+                            <table class="card-table" data-toggle="table">
+                                <thead>
+                                    <tr>
+                                        <td>Assets</td>
+                                        <td>Balance</td>
+                                        <td>USD</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/eth-green.svg" alt="Icon">
+                                            ETH
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/byn-green.svg" alt="Icon">
+                                            Beyond
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$NaN</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/btc-green.svg" alt="Icon">
+                                            BTCb
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/eth-green.svg" alt="Icon">
+                                            ETHb
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/oil-green.svg" alt="Icon">
+                                            OILb
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/gbp-green.svg" alt="Icon">
+                                            GBPb
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/eur-green.svg" alt="Icon">
+                                            EURb
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/icons/usd-green.svg" alt="Icon">
+                                            USDb
+                                        </td>
+                                        <td>0.0000</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--### FAQ SECTION ###-->
+        <section class="faqs-section">
+            <div class="container-fluid">
+                <!-- HEADING -->
+                <div class="heading">
+                    <h1>FREQUENTLY ASKED QUESTIONS (FAQs)</h1>
+                </div>
+                <div class="row">
+
+                    <!-- Text -->
+                    <div class="text">
+                        <p>We always appreciate if you take a minute to look at the most common questions.</p>
+                    </div>
+
+                    <!--## FAQ ROW ##-->
+                    <div id="faqs" class="faq-row">
+
+                        <!--# COLUMN #-->
+                        <div class="col-md-6 col-sm-12">
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading1">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading2">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading3">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading4">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--# COLUMN #-->
+                        <div class="col-md-6 col-sm-12">
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading5">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading6">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading7">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!--# Card #-->
+                            <div class="card">
+                                <div class="card-header" id="heading8">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+                                        <p>Lorem ipsum dolor sit amet</p>
+                                        <img src="images/icons/plus.svg" class="icon" alt="Icon">
+                                    </button>
+                                </div>
+                            
+                                <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#faqs">
+                                  <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                  </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> <!-- / FAQ ROW -->
+
+
+                </div>
+            </div>
+        </section>
+
+        <!--### FOOTER ###-->
+        <footer>
+            <div class="container-fluid">
+            <!--# FOOTER MAIN #-->
+            <div class="row footer-main">
+                <!-- Left -->
+                <div class="left">
+                <div class="about-us">
+
+                    <!-- Brand Logo -->
+                    <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.3 105.8">
+                        <title>Beyond Logo</title>
+                        <path
+                        d="M39.6 40.7c3.4 0 6.2 1.1 8.6 3.2 2.4 2.1 3.6 4.7 3.5 7.8 0 1.6-.4 3-1.1 4.5-.7 1.4-1.7 2.6-2.9 3.6 2 1 3.5 2.3 4.7 4.1 1.2 1.8 1.8 3.7 1.8 5.8 0 3.1-1.2 5.8-3.6 8-2.4 2.2-5.3 3.3-8.7 3.3H0V40.7h39.6zM11 57.1h25.2c1.2 0 2.2-.4 3-1.1.8-.8 1.2-1.7 1.2-2.8 0-1.1-.4-2-1.2-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zm0 15.3h27.9c1.2 0 2.2-.4 3-1.1.9-.8 1.3-1.7 1.2-2.8 0-1.1-.4-2-1.3-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zM109 40.7v8.9H70.5v6.6h33.4V65H70.5v6.9H109v8.9H59.5V40.7H109zM218.9 40.7c3.6 0 6.6 1.1 9.1 3.4s3.8 5 3.7 8.3v16.7c0 3.2-1.2 6-3.7 8.3-2.5 2.3-5.5 3.4-9.1 3.4h-31.4c-3.6 0-6.6-1.1-9.1-3.4s-3.7-5-3.7-8.3V52.5c0-3.2 1.2-6 3.7-8.3 2.5-2.3 5.6-3.4 9.1-3.4h31.4zm-31.8 10.4c-1 .9-1.5 2-1.5 3.3v12.9c0 1.3.5 2.4 1.5 3.3 1 .9 2.2 1.3 3.7 1.3h24.9c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-24.9c-1.5-.1-2.7.3-3.7 1.3zM248 40.7l34.7 28.2V40.7h11v40.1h-11L248 52.7v28.1h-11V40.7h11zM341.5 40.7c2.4 0 4.6.5 6.7 1.6 2.2 1 3.9 2.5 5.1 4.3 1.3 1.8 2 3.8 1.9 5.9v16.7c.1 2.1-.6 4.1-2 5.9-1.3 1.8-3 3.2-5.1 4.3-2 1-4.3 1.6-6.7 1.6h-42.6V40.7h42.7zm-31.6 31.2h29.3c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-29.3v22.1z"
+                        />
+                        <path
+                        d="M83 86.4c-1.7 2.6-3.2 5.4-4.5 8.2-.6 1.4-1.2 2.9-1.6 4.3-.4 1.4-.6 3-.1 3.9.4.8 1.7 1 3.1.7 1.4-.3 2.9-.8 4.3-1.4 2.8-1.2 5.6-2.7 8.2-4.3 5.4-3.1 10.4-6.8 15.4-10.7 5-3.9 9.8-7.9 14.7-11.9 19.6-15.9 39.5-31.9 61.1-45.6 10.8-6.9 22-13.2 33.8-18.6C229.2 5.7 241.9 1.8 255 .4c6.6-.6 13.3-.6 19.9.2 6.6.9 13.1 2.5 19.2 5.1 12.3 5.1 22.6 13.8 30.1 24.1l-.7.6c-9.4-8.4-20.1-15-31.7-18.5-2.9-.9-5.8-1.5-8.8-2.1-3-.5-5.9-.9-8.9-1-6-.3-12 0-18 .9-11.9 1.8-23.7 5.4-35.2 9.9-11.5 4.5-22.7 10.1-33.5 16.4-21.6 12.6-41.9 27.7-62.1 42.9-5.1 3.8-10.2 7.6-15.4 11.2-2.6 1.8-5.2 3.6-7.9 5.4-2.7 1.7-5.5 3.3-8.3 4.8-2.8 1.5-5.7 2.9-8.8 4.1-1.5.6-3.1 1-4.8 1.3-.4 0-.9.1-1.3.1-.5-.1-.9 0-1.4-.2-1-.2-2.1-.9-2.5-1.9-.5-1-.4-2-.3-2.8.1-.9.3-1.7.6-2.5.5-1.6 1.2-3 2-4.5 1.5-2.8 3.2-5.5 5.1-8.1l.7.6z"
+                        />
+                        <path d="M145.4 57.3l-16.7-16.6h-16.1l25.3 23.5z" />
+                    </svg>
+                    </div>
+
+                    <!-- Text -->
+                    <div class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
+                    </p>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <p>+94 722 321 911</p>
+                        <p>MON - SUN / 9:00 AM - 8:00 PM</p>
+                        <p>support@beyond.com</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Right -->
+                <div class="right">
+                
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>PRODUCTS</h5>
+                    </div>
+
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">Stake</a>
+                    </li>
+                    <li>
+                        <a href="#">Market</a>
+                    </li>
+                    <li>
+                        <a href="#">Trade</a>
+                    </li>
+                    <li>
+                        <a href="#">Loan</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>COMPANY</h5>
+                    </div>
+                    
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                    <li>
+                        <a href="#">News/Blog</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>TERMS</h5>
+                    </div>
+                    
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Usage</a>
+                    </li>
+                    <li>
+                        <a href="#">Disclaimer</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>SOCIAL</h5>
+                    </div>
+                    
+                    <ul class="social-icons">
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </li>
+                    </ul>
+                </div>
+
+
+                </div>
+            </div>
+
+            <!--# COPYRIGHT #-->
+            <div class="copyright">
+                <p>&copy; 2020 Beyond. All Rights Reserved.</p>
+            </div>
+            </div>
+        </footer>
+        <!--### FOOTER ENDED ###-->
+
+        <!--### JavaScript Files ###-->
+        <script src="js/custom.js"></script>
+    </body>
+</html>

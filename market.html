@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#1c4e9e">
+        <!-- <link rel="icon" href="images/icons/favicon.svg" type="image/svg" sizes="16x16"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Market - Beyond Exchange</title>
+
+        <!--##Bootstrap##-->
+        <script src="js/jQuery.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <!--## BOOTSTRAP TABLE ##-->
+        <script src="js/bootstrap-table.min.js"></script>
+
+        <!--## BOOTSTRAP SELECT ##-->
+        <script src="js/bootstrap-select.min.js"></script>
+
+        <!--## CHART JS ##-->
+        <script src="js/chartJs.js"></script>
+
+        <!--## FONTAWESOME ##-->
+        <script src="js/fontawesome-kit.js"></script>
+        
+        <!--## Google Font ##-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+        <!--##Custom StyleSheet##-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--### WALLET MODAL ###-->
+        <div class="modal fade wallet-modal" id="walletModal" tabindex="-1" role="dialog" aria-labelledby="walletModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="walletModalLabel">Connect Your Wallet</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body">
+                  <!--# BUTTON #-->
+                  <button class="button">
+                    <img src="images/icons/Metamask.svg" alt="Icon">
+                    <p>Metamask</p>
+                  </button>
+
+                  <!--# BUTTON #-->
+                  <button class="button">
+                    <img src="images/icons/WalletConnect.svg" alt="Icon">
+                    <p>WalletConnect</p>
+                  </button>
+
+                  <!--# BUTTON #-->
+                  <button class="button">
+                    <img src="images/icons/Portis.svg" alt="Icon">
+                    <p>Portis</p>
+                  </button>
+
+                  <!--# BUTTON #-->
+                  <button class="button">
+                    <img src="images/icons/Coinbase-Wallet.svg" alt="Icon">
+                    <p>Coinbase Wallet</p>
+                  </button>
+
+                  <!--# BUTTON #-->
+                  <button class="button">
+                    <img src="images/icons/Formatic.svg" alt="Icon">
+                    <p>Formatic</p>
+                  </button>
+              </div>
+          </div>
+          </div>
+        </div>
+        <!--### WALLET MODAL ###-->
+
+        <!--### HEADER ###-->
+        <header>
+          <div class="container-fluid">
+              <!--# NAVBAR #-->
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                  <a class="navbar-brand" href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.3 105.8">
+                          <title>Beyond Logo</title>
+                          <path
+                          d="M39.6 40.7c3.4 0 6.2 1.1 8.6 3.2 2.4 2.1 3.6 4.7 3.5 7.8 0 1.6-.4 3-1.1 4.5-.7 1.4-1.7 2.6-2.9 3.6 2 1 3.5 2.3 4.7 4.1 1.2 1.8 1.8 3.7 1.8 5.8 0 3.1-1.2 5.8-3.6 8-2.4 2.2-5.3 3.3-8.7 3.3H0V40.7h39.6zM11 57.1h25.2c1.2 0 2.2-.4 3-1.1.8-.8 1.2-1.7 1.2-2.8 0-1.1-.4-2-1.2-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zm0 15.3h27.9c1.2 0 2.2-.4 3-1.1.9-.8 1.3-1.7 1.2-2.8 0-1.1-.4-2-1.3-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zM109 40.7v8.9H70.5v6.6h33.4V65H70.5v6.9H109v8.9H59.5V40.7H109zM218.9 40.7c3.6 0 6.6 1.1 9.1 3.4s3.8 5 3.7 8.3v16.7c0 3.2-1.2 6-3.7 8.3-2.5 2.3-5.5 3.4-9.1 3.4h-31.4c-3.6 0-6.6-1.1-9.1-3.4s-3.7-5-3.7-8.3V52.5c0-3.2 1.2-6 3.7-8.3 2.5-2.3 5.6-3.4 9.1-3.4h31.4zm-31.8 10.4c-1 .9-1.5 2-1.5 3.3v12.9c0 1.3.5 2.4 1.5 3.3 1 .9 2.2 1.3 3.7 1.3h24.9c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-24.9c-1.5-.1-2.7.3-3.7 1.3zM248 40.7l34.7 28.2V40.7h11v40.1h-11L248 52.7v28.1h-11V40.7h11zM341.5 40.7c2.4 0 4.6.5 6.7 1.6 2.2 1 3.9 2.5 5.1 4.3 1.3 1.8 2 3.8 1.9 5.9v16.7c.1 2.1-.6 4.1-2 5.9-1.3 1.8-3 3.2-5.1 4.3-2 1-4.3 1.6-6.7 1.6h-42.6V40.7h42.7zm-31.6 31.2h29.3c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-29.3v22.1z"
+                          />
+                          <path
+                          d="M83 86.4c-1.7 2.6-3.2 5.4-4.5 8.2-.6 1.4-1.2 2.9-1.6 4.3-.4 1.4-.6 3-.1 3.9.4.8 1.7 1 3.1.7 1.4-.3 2.9-.8 4.3-1.4 2.8-1.2 5.6-2.7 8.2-4.3 5.4-3.1 10.4-6.8 15.4-10.7 5-3.9 9.8-7.9 14.7-11.9 19.6-15.9 39.5-31.9 61.1-45.6 10.8-6.9 22-13.2 33.8-18.6C229.2 5.7 241.9 1.8 255 .4c6.6-.6 13.3-.6 19.9.2 6.6.9 13.1 2.5 19.2 5.1 12.3 5.1 22.6 13.8 30.1 24.1l-.7.6c-9.4-8.4-20.1-15-31.7-18.5-2.9-.9-5.8-1.5-8.8-2.1-3-.5-5.9-.9-8.9-1-6-.3-12 0-18 .9-11.9 1.8-23.7 5.4-35.2 9.9-11.5 4.5-22.7 10.1-33.5 16.4-21.6 12.6-41.9 27.7-62.1 42.9-5.1 3.8-10.2 7.6-15.4 11.2-2.6 1.8-5.2 3.6-7.9 5.4-2.7 1.7-5.5 3.3-8.3 4.8-2.8 1.5-5.7 2.9-8.8 4.1-1.5.6-3.1 1-4.8 1.3-.4 0-.9.1-1.3.1-.5-.1-.9 0-1.4-.2-1-.2-2.1-.9-2.5-1.9-.5-1-.4-2-.3-2.8.1-.9.3-1.7.6-2.5.5-1.6 1.2-3 2-4.5 1.5-2.8 3.2-5.5 5.1-8.1l.7.6z"
+                          />
+                          <path d="M145.4 57.3l-16.7-16.6h-16.1l25.3 23.5z" />
+                      </svg>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="stake.html">Stake</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="market.html">Market</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="trade.html">Trade</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="loan.html">Loan</a>
+                      </li>
+                      <li class="nav-item ml-auto">
+                        <a class="nav-link" href="wallet.html">Wallet</a>
+                      </li>
+                    </ul>
+                    <div class="ml-auto right">
+                      <button class="btn button" type="button" data-toggle="modal" data-target="#walletModal">
+                        <i class="fas fa-wallet"></i>
+                        <p>Connect Wallet</p>
+                      </button>
+                    </div>
+                  </div>
+              </nav>
+          </div>
+        </header>
+        <!--### HEADER ENDED ###-->
+
+        <!--### MARKET BANNER ###-->
+        <section class="market-banner sub-pages-banner">
+          <div class="container-fluid">
+            <!--# ROW #-->
+            <div class="row">
+
+              <!--# CARD BOX #-->
+              <div class="col-md-3 col-sm-4 col-12">
+                <div class="card-box value-box">
+                  <!-- Card Head -->
+                  <div class="box-head">
+                    <h5>GBP/ USDb</h5>
+                    <p class="text-success">
+                      <span>0.00</span>%
+                    </p>
+                  </div>
+
+                  <!-- Card Body -->
+                  <div class="box-body">
+                      <!-- Currency Box -->
+                      <div class="currency-box">
+                          <div class="column">
+                              <img src="images/icons/pound.svg" alt="Icon">
+                          </div>
+                          <div class="column">
+                              <h5>POUND</h5>
+                              <span>1.32</span>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--# CARD BOX #-->
+              <div class="col-md-3 col-sm-4 col-12">
+                <div class="card-box chart-box">
+                  <!-- Card Head -->
+                  <div class="box-head">
+                    <h5>OIL/ USDb</h5>
+                    <p class="text-success">
+                      <span>0.00</span>%
+                    </p>
+                  </div>
+
+                  <!-- Card Body -->
+                  <div class="box-body">
+                      <!-- Currency Box -->
+                      <div class="currency-box">
+                          <div class="column">
+                              <img src="images/icons/oil-1.svg" alt="Icon">
+                          </div>
+                          <div class="column">
+                              <h5>OIL</h5>
+                              <span>47.63</span>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--# CARD BOX #-->
+              <div class="col-md-3 col-sm-4 col-12">
+                <div class="card-box ratio-box">
+                  <!-- Card Head -->
+                  <div class="box-head">
+                    <h5>ETHEREUM/ USDb</h5>
+                    <p class="text-success">
+                      <span>2.40</span>%
+                    </p>
+                  </div>
+
+                  <!-- Card Body -->
+                  <div class="box-body">
+                      <!-- Currency Box -->
+                      <div class="currency-box">
+                          <div class="column">
+                              <img src="images/icons/Ethereum-1.svg" alt="Icon">
+                          </div>
+                          <div class="column">
+                              <h5>ETHEREUM</h5>
+                              <span>569.95</span>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--# CARD BOX #-->
+              <div class="col-md-3 col-sm-4 col-12">
+                <div class="card-box value-box">
+                  <!-- Card Head -->
+                  <div class="box-head">
+                    <h5>BTC/ USDb</h5>
+                    <p class="text-success">
+                      <span>3.18</span>%
+                    </p>
+                  </div>
+
+                  <!-- Card Body -->
+                  <div class="box-body">
+                      <!-- Currency Box -->
+                      <div class="currency-box">
+                          <div class="column">
+                              <img src="images/icons/btc-1.svg" alt="Icon">
+                          </div>
+                          <div class="column">
+                              <h5>BITCOIN</h5>
+                              <span>18877.37</span>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+            </div> <!-- / ROW -->
+          </div>
+        </section>
+
+        <!--### MARKET SECTION ###-->
+        <section class="market-section">
+            <div class="container-fluid">
+
+
+                <div class="row table-row-filtered">
+
+                    <!--## MARKET TABLE ##-->
+                    <div class="col-md-9 col-sm-12">
+                        <div class="card-box">
+                          <div class="filter-buttons">
+                            <button class="btn filter-btn active" onclick="filterTable(this, 'all')">All</button>
+                            <button class="btn filter-btn" onclick="filterTable(this, 'cryptocurrency')">CRYPTOCURRENCY</button>
+                            <button class="btn filter-btn" onclick="filterTable(this, 'commodities')">COMMODITIES</button>
+                            <button class="btn filter-btn" onclick="filterTable(this, 'forex')">FOREX</button>
+                          </div>
+                          <table class="card-table" data-toggle="table">
+                              <thead>
+                                <tr>
+                                  <th>ASSETS</th>
+                                  <th data-sortable="true">LAST PRICE</th>
+                                  <th data-sortable="true">24 HOUR CHANGE</th>
+                                  <th data-sortable="true">24 HOUR HIGH</th>
+                                  <th data-sortable="true">24 HOUR LOW</th>
+                                  <th>TRADE NOW</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="filterRow cryptocurrency">
+                                      <td>ETH <span class="currency-full-name">Ethereum</span></td>
+                                      <td>$<span>569.95</span></td>
+                                      <td><p class="change"><span>2.40</span>%</p></td>
+                                      <td>$<span>573.08</span></td>
+                                      <td>$<span>552.00</span></td>
+                                      <td><button class="button">trade</button></td>
+                                    </tr>
+                                <tr class="filterRow cryptocurrency">
+                                  <td>Beyond <span class="currency-full-name">Beyond</span></td>
+                                  <td>$<span>Infinity</span></td>
+                                  <td><p class="change"><span>0.00</span>%</p></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                                <tr class="filterRow cryptocurrency">
+                                  <td>BTCb <span class="currency-full-name">Bitcoin</span></td>
+                                  <td>$<span>18877.37</span></td>
+                                  <td><p class="change"><span>3.18</span>%</p></td>
+                                  <td>$<span>18914.58</span></td>
+                                  <td>$<span>18296.19</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                                <tr class="filterRow cryptocurrency">
+                                  <td>ETHb <span class="currency-full-name">Ethereum</span></td>
+                                  <td>$<span>569.95</span></td>
+                                  <td><p class="change"><span>2.40</span>%</p></td>
+                                  <td>$<span>573.08</span></td>
+                                  <td>$<span>552.00</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                                <tr class="filterRow commodities">
+                                  <td>OILb <span class="currency-full-name">OIL</span></td>
+                                  <td>$<span>47.63</span></td>
+                                  <td><p class="change"><span>0.00</span>%</p></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                                <tr class="filterRow forex">
+                                  <td>GBPb <span class="currency-full-name">Great britain Pound</span></td>
+                                  <td>$<span>1.32</span></td>
+                                  <td><p class="change"><span>0.00</span>%</p></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                                <tr class="filterRow forex">
+                                  <td>EURb <span class="currency-full-name">Euro</span></td>
+                                  <td>$<span>1.21</span></td>
+                                  <td><p class="change"><span>0.00</span>%</p></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                                <tr class="filterRow cryptocurrency">
+                                  <td>USDb <span class="currency-full-name">USDb</span></td>
+                                  <td>$<span>1.00</span></td>
+                                  <td><p class="change"><span>0.00</span>%</p></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td>$<span>0.00</span></td>
+                                  <td><button class="button">trade</button></td>
+                                </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                    </div>
+
+                    <!--### MARKET RIGHT SIDEBAR ###-->
+                    <div class="col-md-3 col-sm-12">
+                      <div class="card-box search-market table-row-filtered">
+                        <!-- Exchange Search Box -->
+                        <div class="card-search-box">
+                            <img src="images/icons/search.svg" alt="Search Icon" class="icon">
+                            <input type="text" placeholder="Search" oninput="searchMarket(this)">
+                        </div>
+
+                        <!-- Exchange Filter Buttons -->
+                        <div class="filter-buttons">
+                            <button class="btn filter-btn active" onclick="filterTable(this, 'all')">All</button>
+                            <button class="btn filter-btn" onclick="filterTable(this, 'gainer')">TOP GAINERS</button>
+                            <button class="btn filter-btn" onclick="filterTable(this, 'loser')">TOP LOSERS</button>
+                        </div>
+
+                        <!-- Exchange List Table -->
+                        <table class="card-table" data-toggle="table">
+                            <thead>
+                              <tr>
+                                <th>Pairs</th>
+                                <th data-sortable="true">LAST PRICE</th>
+                                <th>CHANGE</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <!-- TOP GAINERS -->
+                                <tr class="filterRow gainer">
+                                    <td>BTCb</td>
+                                    <td>19180.39 USD</td>
+                                    <td><p class="negative change"><span>-2.58</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow gainer">
+                                    <td>ETHb</td>
+                                    <td>19180.39 USD</td>
+                                    <td><p class="positive change"><span>+4.16</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow gainer">
+                                    <td>EURb</td>
+                                    <td>1.2163 USD</td>
+                                    <td><p class="negative change"><span>-6.28</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow gainer">
+                                    <td>GBPb</td>
+                                    <td>1.3397 USD</td>
+                                    <td><p class="positive change"><span>+9.40</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow gainer">
+                                    <td>OILb</td>
+                                    <td>47.6274 USD</td>
+                                    <td><p class="positive change"><span>+2.09</span>%</p></td>
+                                </tr>
+
+                                <!-- TOP LOSERS -->
+                                <tr class="filterRow loser">
+                                    <td>ETHb</td>
+                                    <td><span>0.0303</span> BTC</td>
+                                    <td><p class="negative change"><span>-2.58</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow loser">
+                                    <td>EURb</td>
+                                    <td><span>0.0001</span> BTC</td>
+                                    <td><p class="positive change"><span>+4.16</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow loser">
+                                    <td>GBPb</td>
+                                    <td><span>0.0001</span> BTC</td>
+                                    <td><p class="negative change"><span>-6.28</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow loser">
+                                    <td>OILb</td>
+                                    <td><span>0.0025</span> BTC</td>
+                                    <td><p class="positive change"><span>+9.40</span>%</p></td>
+                                </tr>
+                                <tr class="filterRow loser">
+                                    <td>USDb</td>
+                                    <td><span>0.0001</span> BTC</td>
+                                    <td><p class="positive change"><span>+2.09</span>%</p></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                      </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!--### FOOTER ###-->
+        <footer>
+            <div class="container-fluid">
+            <!--# FOOTER MAIN #-->
+            <div class="row footer-main">
+                <!-- Left -->
+                <div class="left">
+                <div class="about-us">
+
+                    <!-- Brand Logo -->
+                    <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.3 105.8">
+                        <title>Beyond Logo</title>
+                        <path
+                        d="M39.6 40.7c3.4 0 6.2 1.1 8.6 3.2 2.4 2.1 3.6 4.7 3.5 7.8 0 1.6-.4 3-1.1 4.5-.7 1.4-1.7 2.6-2.9 3.6 2 1 3.5 2.3 4.7 4.1 1.2 1.8 1.8 3.7 1.8 5.8 0 3.1-1.2 5.8-3.6 8-2.4 2.2-5.3 3.3-8.7 3.3H0V40.7h39.6zM11 57.1h25.2c1.2 0 2.2-.4 3-1.1.8-.8 1.2-1.7 1.2-2.8 0-1.1-.4-2-1.2-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zm0 15.3h27.9c1.2 0 2.2-.4 3-1.1.9-.8 1.3-1.7 1.2-2.8 0-1.1-.4-2-1.3-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zM109 40.7v8.9H70.5v6.6h33.4V65H70.5v6.9H109v8.9H59.5V40.7H109zM218.9 40.7c3.6 0 6.6 1.1 9.1 3.4s3.8 5 3.7 8.3v16.7c0 3.2-1.2 6-3.7 8.3-2.5 2.3-5.5 3.4-9.1 3.4h-31.4c-3.6 0-6.6-1.1-9.1-3.4s-3.7-5-3.7-8.3V52.5c0-3.2 1.2-6 3.7-8.3 2.5-2.3 5.6-3.4 9.1-3.4h31.4zm-31.8 10.4c-1 .9-1.5 2-1.5 3.3v12.9c0 1.3.5 2.4 1.5 3.3 1 .9 2.2 1.3 3.7 1.3h24.9c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-24.9c-1.5-.1-2.7.3-3.7 1.3zM248 40.7l34.7 28.2V40.7h11v40.1h-11L248 52.7v28.1h-11V40.7h11zM341.5 40.7c2.4 0 4.6.5 6.7 1.6 2.2 1 3.9 2.5 5.1 4.3 1.3 1.8 2 3.8 1.9 5.9v16.7c.1 2.1-.6 4.1-2 5.9-1.3 1.8-3 3.2-5.1 4.3-2 1-4.3 1.6-6.7 1.6h-42.6V40.7h42.7zm-31.6 31.2h29.3c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-29.3v22.1z"
+                        />
+                        <path
+                        d="M83 86.4c-1.7 2.6-3.2 5.4-4.5 8.2-.6 1.4-1.2 2.9-1.6 4.3-.4 1.4-.6 3-.1 3.9.4.8 1.7 1 3.1.7 1.4-.3 2.9-.8 4.3-1.4 2.8-1.2 5.6-2.7 8.2-4.3 5.4-3.1 10.4-6.8 15.4-10.7 5-3.9 9.8-7.9 14.7-11.9 19.6-15.9 39.5-31.9 61.1-45.6 10.8-6.9 22-13.2 33.8-18.6C229.2 5.7 241.9 1.8 255 .4c6.6-.6 13.3-.6 19.9.2 6.6.9 13.1 2.5 19.2 5.1 12.3 5.1 22.6 13.8 30.1 24.1l-.7.6c-9.4-8.4-20.1-15-31.7-18.5-2.9-.9-5.8-1.5-8.8-2.1-3-.5-5.9-.9-8.9-1-6-.3-12 0-18 .9-11.9 1.8-23.7 5.4-35.2 9.9-11.5 4.5-22.7 10.1-33.5 16.4-21.6 12.6-41.9 27.7-62.1 42.9-5.1 3.8-10.2 7.6-15.4 11.2-2.6 1.8-5.2 3.6-7.9 5.4-2.7 1.7-5.5 3.3-8.3 4.8-2.8 1.5-5.7 2.9-8.8 4.1-1.5.6-3.1 1-4.8 1.3-.4 0-.9.1-1.3.1-.5-.1-.9 0-1.4-.2-1-.2-2.1-.9-2.5-1.9-.5-1-.4-2-.3-2.8.1-.9.3-1.7.6-2.5.5-1.6 1.2-3 2-4.5 1.5-2.8 3.2-5.5 5.1-8.1l.7.6z"
+                        />
+                        <path d="M145.4 57.3l-16.7-16.6h-16.1l25.3 23.5z" />
+                    </svg>
+                    </div>
+
+                    <!-- Text -->
+                    <div class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
+                    </p>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <p>+94 722 321 911</p>
+                        <p>MON - SUN / 9:00 AM - 8:00 PM</p>
+                        <p>support@beyond.com</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Right -->
+                <div class="right">
+                
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>PRODUCTS</h5>
+                    </div>
+
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">Stake</a>
+                    </li>
+                    <li>
+                        <a href="#">Market</a>
+                    </li>
+                    <li>
+                        <a href="#">Trade</a>
+                    </li>
+                    <li>
+                        <a href="#">Loan</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>COMPANY</h5>
+                    </div>
+                    
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                    <li>
+                        <a href="#">News/Blog</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>TERMS</h5>
+                    </div>
+                    
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Usage</a>
+                    </li>
+                    <li>
+                        <a href="#">Disclaimer</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>SOCIAL</h5>
+                    </div>
+                    
+                    <ul class="social-icons">
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </li>
+                    </ul>
+                </div>
+
+
+                </div>
+            </div>
+
+            <!--# COPYRIGHT #-->
+            <div class="copyright">
+                <p>&copy; 2020 Beyond. All Rights Reserved.</p>
+            </div>
+            </div>
+        </footer>
+        <!--### FOOTER ENDED ###-->
+
+        <!--### INNER JAVASCRIPT ###-->
+        <script>
+            $(document).ready(function(){
+                let filterBtn = document.getElementsByClassName('filter-btn');
+                let getFirstTabText = filterBtn[0].innerHTML.toLowerCase();
+                let filterTextElement = document.getElementsByClassName(getFirstTabText);
+                let filterRow = $('.filterRow');
+
+                if(filterRow.hasClass(getFirstTabText)){
+                    for(let i = 0; i < filterTextElement.length; i++){
+                        filterTextElement[i].classList.add('show');
+                        filterTextElement[i].classList.add('active');
+                    }
+                } else { // For All
+
+                    filterRow.addClass('show')
+                    filterRow.addClass('active')
+                }
+                
+            })
+        </script>
+        <!--### JavaScript Files ###-->
+        <script src="js/custom.js"></script>
+    </body>
+</html>

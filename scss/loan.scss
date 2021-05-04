@@ -1,0 +1,30 @@
+/* LOAN BANNER */
+.loan-banner{
+    padding: 150px 0px;
+    min-height: auto;
+    display: none;
+    
+    &::before{
+        background-image: url('../images/illustration/loan-banner-img.svg');
+        width: 40%;
+    }
+    
+    .row{
+        padding-left: 100px;
+
+        .heading{
+            color: $green-light;
+        }
+    }
+}
+
+/*--### LOAN SECTION ###--*/
+.loan-section{
+    background-color: $black;
+    color: $white;
+    padding-bottom: 50px;
+    
+    .card-submit-box .card-form .input-box .input-box-top h5{
+        font-size: 15px;
+    }
+}

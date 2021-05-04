@@ -1,0 +1,163 @@
+/*--### WALLET BANNER ###--*/
+.wallet-banner{
+    background-color: #141722;
+    color: $white;
+    padding: 130px 0px;
+    position: relative;
+
+    /* ROW */
+    .row{
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+    }
+
+    /* HEADING */
+    .heading{
+        color: $white;
+
+        span{
+            font-weight: 300;
+            color: $green-light;
+        }
+    }
+
+    /* BEFORE */
+    &::before{
+        content: "";
+        display: block;
+        height: 100%;
+        width: 47%;
+        position: absolute;
+        right: -9%;
+        top: 0;
+        // background-image: url('../images/banner-img.png');
+        background-image: url('../images/illustration/wallet-banner-img1.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.9);
+    }
+
+    /* NAV PILLS */
+    .nav-pills{
+
+        li{
+            margin-right: 25px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            a{
+                color: $green-light;
+                padding: .5rem 2.5rem;
+                border-radius: 100px;
+                font-weight: 400;
+
+                &.active{
+                    color: $white;
+                    background-color: $green-light !important;
+                }
+
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/*--### WALLET TAB CONTENT ###--*/
+.wallet-tab-content{
+    background-color: $black;
+    padding-bottom: 50px;
+
+    /* TAB CONTENT */
+    .tab-content{
+        width: 100%;
+
+        .content-row{
+            margin-bottom: 15px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    /* CARD BOX */
+    .card-box{
+        height: 100%;
+
+        /* BOX HEAD */
+        .box-head{
+            margin-bottom: 0;
+        }
+
+        /* BOX BODY */
+        .box-body{
+            padding: 15px;
+            height: calc(100% - 40px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: #939299;
+
+        }
+
+        /* RATIO BOX */
+        &.ratio-box{
+
+            /* Row */
+            .row{
+                display: flex;
+                justify-content: space-around;
+
+                .column{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 300;
+
+                    span{
+                        font-size: 24px;
+                    }
+                }
+
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        /* VALUE BOX */
+        &.value-box{
+
+            p{
+                margin-bottom: 0;
+                font-size: 24px;
+                font-weight: 300;
+            }
+        }
+
+        /* CARD TABLE */
+        .card-table{
+            
+            th{
+                font-size: 16px;
+            }
+            td{
+                font-size: 15px;
+            }
+        }
+    }
+
+
+    /* SYNTHS TABLE */
+    .synths-table{
+        margin-top: 50px;
+    }
+}

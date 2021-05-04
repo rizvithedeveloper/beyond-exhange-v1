@@ -1,0 +1,103 @@
+/*---### TRADE EXCHANGE SECTION ###--*/
+.trade-exchange-section{
+    // background: #131722;
+    background: $black;
+    padding-bottom: 50px;
+
+    /* TRADE EXCHANGE LIST BOX */
+    .trade-exchange-list-box{
+
+        table{
+
+            tr{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .trade-exchange-list-box{
+        height: 100%;
+    }
+
+    /* EXCHANGE TITLE */
+    .exchange-title{
+        color: $green-light;
+    }
+
+    
+    /* EXCHANGE SHORT DETAIL */
+    .exchange-short-detail{
+        display: flex;
+        justify-content: space-between;
+        color: #a1a0a7;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+
+        .column{
+            display: flex;
+            flex-direction: column;
+            
+            h6{
+                font-size: 12px;
+                font-weight: 100;
+                margin-bottom: 4px;
+                color: $green-light;
+            }
+            p{
+                margin-bottom: 0;
+                font-size: 15px;
+                text-align: center;
+            }
+
+            /* Change */
+            .change {
+                font-size: 14px;
+
+                &.positive{
+                    color: #28a745;
+                }
+                &.negative{
+                    color: red;
+                }
+            }
+        }
+    }
+
+    /* EXCHANGE CHART */
+    .exchange-chart{
+        height: 500px;
+
+        iframe{
+            min-height: 100%;
+        }
+    }
+
+    /* CARD SUBMIT BOX */
+    .card-submit-box{
+        margin-top: 45px;
+        height: calc(100% - 45px);
+    }
+
+
+    /* EXCHANGE TRADE ROW */
+    .exchange-trades-row{
+        margin-top: 15px;
+
+        /* CARD BOX */
+        .card-box{
+            height: 100%;
+
+            .box-head{
+                margin-bottom: 0;
+            }
+        }
+
+        /* Table */
+        table{
+
+            a{
+                color: $green-light;
+            }
+        }
+    }
+}

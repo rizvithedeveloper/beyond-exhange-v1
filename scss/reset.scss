@@ -1,0 +1,72 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+input, button, a, select, textarea, .dropdown-toggle{
+    text-decoration: none !important;
+
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* CONTAINER FLUID */
+.container-fluid, .sub-pages-banner{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+section{
+
+    /* CONTAINER FLUID */
+    .container-fluid{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* ALL COL */
+    [class*='col-']{
+        padding-left: 15px;
+        padding-right: 0;
+    
+        &:last-child{
+            padding-right: 15px;
+        }
+    }
+}
+.form-control{
+
+    &:focus{
+        border-color: $blue-dark;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.img-responsive{
+    width: 100%;
+}

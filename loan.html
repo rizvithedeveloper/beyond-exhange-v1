@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#1c4e9e">
+        <!-- <link rel="icon" href="images/icons/favicon.svg" type="image/svg" sizes="16x16"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Loan - Beyond Exchange</title>
+
+        <!--##Bootstrap##-->
+        <script src="js/jQuery.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <!--## BOOTSTRAP TABLE ##-->
+        <script src="js/bootstrap-table.min.js"></script>
+
+        <!--## BOOTSTRAP SELECT ##-->
+        <script src="js/bootstrap-select.min.js"></script>
+
+        <!--## CHART JS ##-->
+        <script src="js/chartJs.js"></script>
+
+        <!--## FONTAWESOME ##-->
+        <script src="js/fontawesome-kit.js"></script>
+        
+        <!--## Google Font ##-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+        <!--##Custom StyleSheet##-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--### WALLET MODAL ###-->
+        <div class="modal fade wallet-modal" id="walletModal" tabindex="-1" role="dialog" aria-labelledby="walletModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="walletModalLabel">Connect Your Wallet</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Metamask.svg" alt="Icon">
+                    <p>Metamask</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/WalletConnect.svg" alt="Icon">
+                    <p>WalletConnect</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Portis.svg" alt="Icon">
+                    <p>Portis</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Coinbase-Wallet.svg" alt="Icon">
+                    <p>Coinbase Wallet</p>
+                    </button>
+
+                    <!--# BUTTON #-->
+                    <button class="button">
+                    <img src="images/icons/Formatic.svg" alt="Icon">
+                    <p>Formatic</p>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--### WALLET MODAL ###-->
+
+        <!--### HEADER ###-->
+        <header>
+            <div class="container-fluid">
+                <!--# NAVBAR #-->
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.3 105.8">
+                            <title>Beyond Logo</title>
+                            <path
+                            d="M39.6 40.7c3.4 0 6.2 1.1 8.6 3.2 2.4 2.1 3.6 4.7 3.5 7.8 0 1.6-.4 3-1.1 4.5-.7 1.4-1.7 2.6-2.9 3.6 2 1 3.5 2.3 4.7 4.1 1.2 1.8 1.8 3.7 1.8 5.8 0 3.1-1.2 5.8-3.6 8-2.4 2.2-5.3 3.3-8.7 3.3H0V40.7h39.6zM11 57.1h25.2c1.2 0 2.2-.4 3-1.1.8-.8 1.2-1.7 1.2-2.8 0-1.1-.4-2-1.2-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zm0 15.3h27.9c1.2 0 2.2-.4 3-1.1.9-.8 1.3-1.7 1.2-2.8 0-1.1-.4-2-1.3-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zM109 40.7v8.9H70.5v6.6h33.4V65H70.5v6.9H109v8.9H59.5V40.7H109zM218.9 40.7c3.6 0 6.6 1.1 9.1 3.4s3.8 5 3.7 8.3v16.7c0 3.2-1.2 6-3.7 8.3-2.5 2.3-5.5 3.4-9.1 3.4h-31.4c-3.6 0-6.6-1.1-9.1-3.4s-3.7-5-3.7-8.3V52.5c0-3.2 1.2-6 3.7-8.3 2.5-2.3 5.6-3.4 9.1-3.4h31.4zm-31.8 10.4c-1 .9-1.5 2-1.5 3.3v12.9c0 1.3.5 2.4 1.5 3.3 1 .9 2.2 1.3 3.7 1.3h24.9c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-24.9c-1.5-.1-2.7.3-3.7 1.3zM248 40.7l34.7 28.2V40.7h11v40.1h-11L248 52.7v28.1h-11V40.7h11zM341.5 40.7c2.4 0 4.6.5 6.7 1.6 2.2 1 3.9 2.5 5.1 4.3 1.3 1.8 2 3.8 1.9 5.9v16.7c.1 2.1-.6 4.1-2 5.9-1.3 1.8-3 3.2-5.1 4.3-2 1-4.3 1.6-6.7 1.6h-42.6V40.7h42.7zm-31.6 31.2h29.3c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-29.3v22.1z"
+                            />
+                            <path
+                            d="M83 86.4c-1.7 2.6-3.2 5.4-4.5 8.2-.6 1.4-1.2 2.9-1.6 4.3-.4 1.4-.6 3-.1 3.9.4.8 1.7 1 3.1.7 1.4-.3 2.9-.8 4.3-1.4 2.8-1.2 5.6-2.7 8.2-4.3 5.4-3.1 10.4-6.8 15.4-10.7 5-3.9 9.8-7.9 14.7-11.9 19.6-15.9 39.5-31.9 61.1-45.6 10.8-6.9 22-13.2 33.8-18.6C229.2 5.7 241.9 1.8 255 .4c6.6-.6 13.3-.6 19.9.2 6.6.9 13.1 2.5 19.2 5.1 12.3 5.1 22.6 13.8 30.1 24.1l-.7.6c-9.4-8.4-20.1-15-31.7-18.5-2.9-.9-5.8-1.5-8.8-2.1-3-.5-5.9-.9-8.9-1-6-.3-12 0-18 .9-11.9 1.8-23.7 5.4-35.2 9.9-11.5 4.5-22.7 10.1-33.5 16.4-21.6 12.6-41.9 27.7-62.1 42.9-5.1 3.8-10.2 7.6-15.4 11.2-2.6 1.8-5.2 3.6-7.9 5.4-2.7 1.7-5.5 3.3-8.3 4.8-2.8 1.5-5.7 2.9-8.8 4.1-1.5.6-3.1 1-4.8 1.3-.4 0-.9.1-1.3.1-.5-.1-.9 0-1.4-.2-1-.2-2.1-.9-2.5-1.9-.5-1-.4-2-.3-2.8.1-.9.3-1.7.6-2.5.5-1.6 1.2-3 2-4.5 1.5-2.8 3.2-5.5 5.1-8.1l.7.6z"
+                            />
+                            <path d="M145.4 57.3l-16.7-16.6h-16.1l25.3 23.5z" />
+                        </svg>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="stake.html">Stake</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="market.html">Market</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="trade.html">Trade</a>
+                        </li>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="loan.html">Loan</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                          <a class="nav-link" href="wallet.html">Wallet</a>
+                        </li>
+                      </ul>
+                      <div class="ml-auto right">
+                        <button class="btn button" type="button" data-toggle="modal" data-target="#walletModal">
+                          <i class="fas fa-wallet"></i>
+                          <p>Connect Wallet</p>
+                        </button>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--### HEADER ENDED ###-->
+
+        <!--### LOAN BANNER ###-->
+        <section class="loan-banner sub-pages-banner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7 col-12">
+                        <!--## HEADING ##-->
+                        <div class="heading">
+                            <h1>LOAN</h1>
+                        </div>
+
+                        <!--## TEXT ##-->
+                        <div class="text">
+                            <p>
+                                Manage Your Loans Easily.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--### LOAN SECTION ###-->
+        <section class="loan-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <!--## COLUMN ##-->
+                    <div class="col-md-8 col-sm-12 col-12">
+                        <!--## CARD BOX ##-->
+                        <div class="card-box">
+
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <div class="heading">
+                                    <h5>ETH as Collateral</h5>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="button active">ETHb</button>
+                                    <button class="button">USDb</button>
+                                </div>
+
+                                <a href="#" class="external-link">
+                                    <p>View Contacts</p>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+
+                            <!-- Box Body -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-12 column">
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>INTEREST FEE</p>
+                                            <p>MINTING FEE</p>
+                                            <p># OF OPEN LOANS</p>
+                                            <p>ETHb LIMIT</p>
+                                            <p>ETHb SUPPLY</p>
+                                        </div>
+
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>0%</p>
+                                            <p>0.50%</p>
+                                            <p>0</p>
+                                            <p>5,000</p>
+                                            <p>0</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-12 column">
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>MIN. COLLAT. SIZE</p>
+                                            <p>COLLAT. RATIO</p>
+                                            <p>LOCKED ETH</p>
+                                            <p>ETH PRICE (USD)</p>
+                                        </div>
+
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>1.0 ETH</p>
+                                            <p>100%</p>
+                                            <p>0</p>
+                                            <p>584.1512783000001</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--## CARD BOX ##-->
+                        <div class="card-box">
+
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <div class="heading">
+                                    <h5>Your Wallet</h5>
+                                </div>
+                            </div>
+
+                            <!-- Box Body -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-12 column">
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>ETHb BALANCE</p>
+                                        </div>
+
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>0</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-12 column">
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>ETH BALANCE</p>
+                                        </div>
+
+                                        <!-- Content -->
+                                        <div class="content">
+                                            <p>0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--## CARD BOX ##-->
+                        <div class="card-box">
+
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <div class="heading">
+                                    <h5>Your Loans</h5>
+                                </div>
+                            </div>
+
+                            <!-- Box Body -->
+                            <div class="box-body">
+                                
+                                <!-- Exchange List Table -->
+                                <table class="card-table" data-toggle="table">
+                                    <thead>
+                                    <tr>
+                                        <th data-sortable="true">AMOUNT BORROWED</th>
+                                        <th data-sortable="true">COLLATERAL</th>
+                                        <th data-sortable="true">C-RATIO</th>
+                                        <th data-sortable="true">TIME OPENED</th>
+                                        <th data-sortable="true">CURRENT.INST.FEE</th>
+                                        <th data-sortable="true">STATUS</th>
+                                        <th data-sortable="true">VERIFY</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>$1234</td>
+                                            <td>USD</td>
+                                            <td>40.80%</td>
+                                            <td>12 Dec 2020 - 14:18:20</td>
+                                            <td>$1</td>
+                                            <td><p class="text-success">Completed</p></td>
+                                            <td><a href="#">Verify Now</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>$1234</td>
+                                            <td>USD</td>
+                                            <td>40.80%</td>
+                                            <td>12 Dec 2020 - 14:18:20</td>
+                                            <td>$1</td>
+                                            <td><p class="text-danger">Cancelled</p></td>
+                                            <td><a href="#">Verify Now</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>$1234</td>
+                                            <td>USD</td>
+                                            <td>40.80%</td>
+                                            <td>12 Dec 2020 - 14:18:20</td>
+                                            <td>$1</td>
+                                            <td><p class="text-success">Completed</p></td>
+                                            <td><a href="#">Verify Now</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>$1234</td>
+                                            <td>USD</td>
+                                            <td>40.80%</td>
+                                            <td>12 Dec 2020 - 14:18:20</td>
+                                            <td>$1</td>
+                                            <td><p class="">Open</p></td>
+                                            <td><a href="#">Verify Now</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>$1234</td>
+                                            <td>USD</td>
+                                            <td>40.80%</td>
+                                            <td>12 Dec 2020 - 14:18:20</td>
+                                            <td>$1</td>
+                                            <td><p class="text-success">Completed</p></td>
+                                            <td><a href="#">Verify Now</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--## COLUMN ##-->
+                    <div class="col-md-4 col-sm-12 col-12">
+                        <!--# CARD BOX #-->
+                        <div class="card-box card-submit-box">
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <h5>Create Loan</h5>
+                            </div>
+                            <form action="#" class="card-form">
+                                <!--# Input Box #-->
+                                <div class="input-box">
+                                    <!-- Input Box Top -->
+                                    <div class="input-box-top">
+                                        <h5>ETH BEING LOCKED</h5>
+                                        <p>Balance: <span>27.45</span></p>
+                                    </div>
+                                    <!-- Icon With Input -->
+                                    <div class="icon-with-input">
+                                        <div class="icon-text">
+                                            <img src="images/icons/eth-green.svg" alt="Icon">
+                                            <p>ETH</p>
+                                        </div>
+
+                                        <!-- Input -->
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!--# Input Box #-->
+                                <div class="input-box">
+                                    <!-- Input Box Top -->
+                                    <div class="input-box-top">
+                                        <h5>ETHb BEING BORROWED</h5>
+                                        <p>Balance: <span>0.45</span></p>
+                                    </div>
+                                    <!-- Icon With Input -->
+                                    <div class="icon-with-input">
+                                        <div class="icon-text">
+                                            <img src="images/icons/eth-green.svg" alt="Icon">
+                                            <p>ETHb</p>
+                                        </div>
+
+                                        <!-- Input -->
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- Fee Values Box -->
+                                <div class="fee-values-box">
+                                    <ul>
+                                        <li>
+                                            <p>USD Value</p>
+                                            <p>$<span>0</span></p>
+                                        </li>
+                                        <li>
+                                            <p>FEE ?</p>
+                                            <p>$<span>0.000021</span></p>
+                                        </li>
+                                        <li class="changeable-gasfee">
+                                            <p>GAS PRICE(GWE)</p>
+                                            <p>$<span class="gas-fee">1</span> <a href="#" data-toggle="modal" data-target="#feeModal1">Edit</a></p>
+
+                                            <!--## MODAL ##-->
+                                            <div class="modal fade gas-fee-modal" id="feeModal1" tabindex="-1" role="dialog" aria-labelledby="feeModal1Label" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="feeModal1Label">Gas Fee</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="number" placeholder="CUSTOM" class="form-control custom-gasfee-input" oninput="changeGasFee(this)">
+                                                        <button class="button" type="button" value="17" onclick="changetheGasFeeValue(this)">Average 17</button>
+                                                        <button class="button" type="button" value="23" onclick="changetheGasFeeValue(this)">Fast 23</button>
+                                                        <button class="button" type="button" value="34" onclick="changetheGasFeeValue(this)">Fastest 34</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!--# BUTTON #-->
+                                <div class="submit-button">
+                                    <input type="submit" class="button" value="Create Loan">
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <!--# CARD BOX #-->
+                        <div class="card-box card-submit-box">
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <h5>Close Loan</h5>
+                            </div>
+                            <form action="#" class="card-form">
+                                <!--# Input Box #-->
+                                <div class="input-box">
+                                    <!-- Input Box Top -->
+                                    <div class="input-box-top">
+                                        <h5>ETH BEING LOCKED</h5>
+                                        <p>Balance: <span>27.45</span></p>
+                                    </div>
+                                </div>
+
+                                <!--# Input Box #-->
+                                <div class="input-box">
+                                    <!-- Input Box Top -->
+                                    <div class="input-box-top">
+                                        <h5>ETHb BEING BORROWED</h5>
+                                        <p>Balance: <span>0.45</span></p>
+                                    </div>
+                                </div>
+
+                                <!-- Fee Values Box -->
+                                <div class="fee-values-box">
+                                    <ul>
+                                        <li>
+                                            <p>sUSD Value</p>
+                                            <p>$<span>0</span></p>
+                                        </li>
+                                        <li>
+                                            <p>FEE ?</p>
+                                            <p>$<span>0.000021</span></p>
+                                        </li>
+                                        <li class="changeable-gasfee">
+                                            <p>GAS PRICE(GWE)</p>
+                                            <p>$<span class="gas-fee">1</span> <a href="#" data-toggle="modal" data-target="#feeModal2">Edit</a></p>
+
+                                            <!--## MODAL ##-->
+                                            <div class="modal fade gas-fee-modal" id="feeModal2" tabindex="-1" role="dialog" aria-labelledby="feeModal1Label" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="feeModal1Label">Gas Fee</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="number" placeholder="CUSTOM" class="form-control custom-gasfee-input" oninput="changeGasFee(this)">
+                                                        <button class="button" type="button" value="17" onclick="changetheGasFeeValue(this)">Average 17</button>
+                                                        <button class="button" type="button" value="23" onclick="changetheGasFeeValue(this)">Fast 23</button>
+                                                        <button class="button" type="button" value="34" onclick="changetheGasFeeValue(this)">Fastest 34</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!--# BUTTON #-->
+                                <div class="submit-button">
+                                    <input type="submit" class="button" value="Close Loan">
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--### FOOTER ###-->
+        <footer>
+            <div class="container-fluid">
+            <!--# FOOTER MAIN #-->
+            <div class="row footer-main">
+                <!-- Left -->
+                <div class="left">
+                <div class="about-us">
+
+                    <!-- Brand Logo -->
+                    <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.3 105.8">
+                        <title>Beyond Logo</title>
+                        <path
+                        d="M39.6 40.7c3.4 0 6.2 1.1 8.6 3.2 2.4 2.1 3.6 4.7 3.5 7.8 0 1.6-.4 3-1.1 4.5-.7 1.4-1.7 2.6-2.9 3.6 2 1 3.5 2.3 4.7 4.1 1.2 1.8 1.8 3.7 1.8 5.8 0 3.1-1.2 5.8-3.6 8-2.4 2.2-5.3 3.3-8.7 3.3H0V40.7h39.6zM11 57.1h25.2c1.2 0 2.2-.4 3-1.1.8-.8 1.2-1.7 1.2-2.8 0-1.1-.4-2-1.2-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zm0 15.3h27.9c1.2 0 2.2-.4 3-1.1.9-.8 1.3-1.7 1.2-2.8 0-1.1-.4-2-1.3-2.8-.8-.8-1.8-1.1-3-1.1H11v7.8zM109 40.7v8.9H70.5v6.6h33.4V65H70.5v6.9H109v8.9H59.5V40.7H109zM218.9 40.7c3.6 0 6.6 1.1 9.1 3.4s3.8 5 3.7 8.3v16.7c0 3.2-1.2 6-3.7 8.3-2.5 2.3-5.5 3.4-9.1 3.4h-31.4c-3.6 0-6.6-1.1-9.1-3.4s-3.7-5-3.7-8.3V52.5c0-3.2 1.2-6 3.7-8.3 2.5-2.3 5.6-3.4 9.1-3.4h31.4zm-31.8 10.4c-1 .9-1.5 2-1.5 3.3v12.9c0 1.3.5 2.4 1.5 3.3 1 .9 2.2 1.3 3.7 1.3h24.9c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-24.9c-1.5-.1-2.7.3-3.7 1.3zM248 40.7l34.7 28.2V40.7h11v40.1h-11L248 52.7v28.1h-11V40.7h11zM341.5 40.7c2.4 0 4.6.5 6.7 1.6 2.2 1 3.9 2.5 5.1 4.3 1.3 1.8 2 3.8 1.9 5.9v16.7c.1 2.1-.6 4.1-2 5.9-1.3 1.8-3 3.2-5.1 4.3-2 1-4.3 1.6-6.7 1.6h-42.6V40.7h42.7zm-31.6 31.2h29.3c1.5-.1 2.7-.5 3.7-1.4 1-.9 1.5-2 1.5-3.3V54.4c0-1.3-.5-2.5-1.5-3.3-1-1-2.2-1.4-3.7-1.3h-29.3v22.1z"
+                        />
+                        <path
+                        d="M83 86.4c-1.7 2.6-3.2 5.4-4.5 8.2-.6 1.4-1.2 2.9-1.6 4.3-.4 1.4-.6 3-.1 3.9.4.8 1.7 1 3.1.7 1.4-.3 2.9-.8 4.3-1.4 2.8-1.2 5.6-2.7 8.2-4.3 5.4-3.1 10.4-6.8 15.4-10.7 5-3.9 9.8-7.9 14.7-11.9 19.6-15.9 39.5-31.9 61.1-45.6 10.8-6.9 22-13.2 33.8-18.6C229.2 5.7 241.9 1.8 255 .4c6.6-.6 13.3-.6 19.9.2 6.6.9 13.1 2.5 19.2 5.1 12.3 5.1 22.6 13.8 30.1 24.1l-.7.6c-9.4-8.4-20.1-15-31.7-18.5-2.9-.9-5.8-1.5-8.8-2.1-3-.5-5.9-.9-8.9-1-6-.3-12 0-18 .9-11.9 1.8-23.7 5.4-35.2 9.9-11.5 4.5-22.7 10.1-33.5 16.4-21.6 12.6-41.9 27.7-62.1 42.9-5.1 3.8-10.2 7.6-15.4 11.2-2.6 1.8-5.2 3.6-7.9 5.4-2.7 1.7-5.5 3.3-8.3 4.8-2.8 1.5-5.7 2.9-8.8 4.1-1.5.6-3.1 1-4.8 1.3-.4 0-.9.1-1.3.1-.5-.1-.9 0-1.4-.2-1-.2-2.1-.9-2.5-1.9-.5-1-.4-2-.3-2.8.1-.9.3-1.7.6-2.5.5-1.6 1.2-3 2-4.5 1.5-2.8 3.2-5.5 5.1-8.1l.7.6z"
+                        />
+                        <path d="M145.4 57.3l-16.7-16.6h-16.1l25.3 23.5z" />
+                    </svg>
+                    </div>
+
+                    <!-- Text -->
+                    <div class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
+                    </p>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <p>+94 722 321 911</p>
+                        <p>MON - SUN / 9:00 AM - 8:00 PM</p>
+                        <p>support@beyond.com</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Right -->
+                <div class="right">
+                
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>PRODUCTS</h5>
+                    </div>
+
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">Stake</a>
+                    </li>
+                    <li>
+                        <a href="#">Market</a>
+                    </li>
+                    <li>
+                        <a href="#">Trade</a>
+                    </li>
+                    <li>
+                        <a href="#">Loan</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>COMPANY</h5>
+                    </div>
+                    
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                    <li>
+                        <a href="#">News/Blog</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>TERMS</h5>
+                    </div>
+                    
+                    <ul class="footer-links">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Usage</a>
+                    </li>
+                    <li>
+                        <a href="#">Disclaimer</a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column -->
+                <div class="footer-column">
+                    <!-- Footer Heading -->
+                    <div class="footer-heading">
+                    <h5>SOCIAL</h5>
+                    </div>
+                    
+                    <ul class="social-icons">
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </li>
+                    </ul>
+                </div>
+
+
+                </div>
+            </div>
+
+            <!--# COPYRIGHT #-->
+            <div class="copyright">
+                <p>&copy; 2020 Beyond. All Rights Reserved.</p>
+            </div>
+            </div>
+        </footer>
+        <!--### FOOTER ENDED ###-->
+
+        <!--### JavaScript Files ###-->
+        <script src="js/custom.js"></script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+header{
+    background-color: #141722;
+    color: $white;
+    padding: 10px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: -3px 13px 24px -1px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #363c4e;
+
+
+    /* NAVBAR */
+    .navbar{
+        padding-left: 0;
+        padding-right: 0;
+
+        /* NAVBAR BRAND */
+        .navbar-brand{
+            width: 160px;
+            margin-right: 100px;
+            
+            svg{
+                fill: $white;
+            }
+        }
+        
+        /* UL */
+        ul.navbar-nav{
+            width: calc(100% - 240px);
+
+            li{
+                padding-right: 30px;
+
+                &:last-child{
+                    padding-right: 0;
+                }
+
+                a{
+                    position: relative;
+                    transition: 0.4s all;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        border-top: 2px solid $green-light;
+                        bottom: -28px;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        transition: 0.4s all;
+                    }
+                }
+
+                /* ACTIVE */
+                &.active, &:hover{
+
+                    a{
+                        color: $white;
+
+                        &::before{
+                            width: calc(100% - 1rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* RIGHT */
+    .right{
+        display: flex;
+
+        /* BUTTON */
+        .button{
+            text-transform: capitalize;
+        }
+    }
+}

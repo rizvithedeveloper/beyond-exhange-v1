@@ -1,0 +1,102 @@
+/*--## GAS FEE MODAL ##--*/
+.gas-fee-modal{
+
+    .modal-body{
+
+        input{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .button{
+            margin-bottom: 10px;
+            background-color: $light-grey;
+            color: $dark;
+            width: 100%;
+
+            &.active{
+                background-color: $green-light;
+                color: $white;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/*--## MODAL ##--*/
+.modal{
+
+    /* MODAL DIALOG */
+    .modal-dialog{
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+
+        .modal-content{
+            border: none;
+            background-color: #131722;
+            color: #939299;
+        }
+    }
+
+    /* MODAL TITLE */
+    .modal-title{
+        font-weight: 300;
+        color: $green-light;
+    }
+
+    .modal-header{
+        border-color: #363c4e;
+
+        .close{
+            font-family: $font;
+            font-weight: 100;
+            font-size: 30px;
+            color: $white;
+        }
+    }
+}
+
+/* MODAL OPEN */
+body.modal-open{
+    padding-right: 0 !important;
+}
+
+/*--### WALLET MODAL ###--*/
+.wallet-modal{
+    
+    .modal-body{
+
+        /* BUTTON */
+        .button{
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border: 1px solid $green-light;
+
+            &:hover{
+                background: none;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            img{
+                margin-right: 20px;
+                height: 38px;
+                // filter: drop-shadow(2px 3px 3px black);
+            }
+            p{
+                height: 38px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+}
